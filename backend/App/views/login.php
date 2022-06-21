@@ -123,8 +123,9 @@ echo $header;
                                     <h5 style="color:#1B8586;" class="font-weight-bolder text-center">Congreso de la Asociación Psiquiátrica Mexicana</h5>
                                     <hr>
                                     <h4 style="color: #a19a9a;" class="font-weight-bolder text-center">"VI Congreso Mundial de Patología Dual"</h4>
-
-                                    <h5 style="color: #1c6d61;" class="font-weight-bolder text-center">"La trivia estará disponible el día de hoy 21 de Junio a las 8:00 pm Hora Local CDMX</h5>
+                                    <br>
+                                    <br>
+                                    <h5 style="color: #1c6d61;" class="font-weight-bolder text-center">La trivia estará disponible el día de hoy 21 de Junio a las 8:00 pm Hora Local CDMX</h5>
                                     <div id="counter" class="group text-center mt-4">
                                         <!-- <span><em>days</em></span> 
                                         <span><em>hours</em></span>
