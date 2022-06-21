@@ -150,14 +150,6 @@ echo $header;
                                         <div class="mb-5">
                                             <input type="email" name="usuario" id="usuario" class="form-control" placeholder="usuario@grupolahe.com" aria-label="Email">
                                         </div>
-                                        <!-- <label style="font-weight:bold; font-size: 15px">Contraseña</label> -->
-                                        <!-- <div class="mb-3">
-                                            <input type="password" name="password" id="password" class="form-control" placeholder="•••••••••" aria-label="Password">
-                                        </div> -->
-                                        <!-- <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
-                                            <label class="form-check-label" for="rememberMe">Recordar contraseña</label>
-                                        </div> -->
 
                                         <div class="text-center">
                                             <button type="button" id="btnEntrar" class="btn bg-gradient-info w-100 mt-1 mb-0"><b style="color: #FFFFFF">ENTRAR</b></button>
