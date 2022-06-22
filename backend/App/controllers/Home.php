@@ -37,9 +37,9 @@ html;
         $encuesta = '';
        
         $preguntas  = TalleresDao::getPreguntasByVideoCongreso(1);
-
+        $num_pregunta = 1;
         foreach ($preguntas as $key => $value) {
-            $num_pregunta = 1;
+            
             $encuesta .= <<<html
             <div class="col-12 encuesta_completa">
                 <div class="mb-3 text-dark">
@@ -72,10 +72,10 @@ html;
 
             <script>
                 $('.encuesta_curso_$num_pregunta').on('click',function(){
-                    let respuesta = $('.encuesta_curso_$num_pregunta input[name=pregunta_$num_pregunta]:checked');
-                    if($('.encuesta_curso_$num_pregunta #op'+respuesta.val()+' input').prop('checked')){
-                        $('.encuesta_curso_$num_pregunta label').removeClass('opacity-5');
-                        $('.encuesta_curso_$num_pregunta #op'+respuesta.val()+' label').addClass('opacity-5');
+                    // let respuesta = $('.encuesta_curso_$num_pregunta input[name=pregunta_$num_pregunta]:checked');
+                    // if($('.encuesta_curso_$num_pregunta #op'+respuesta.val()+' input').prop('checked')){
+                    //     $('.encuesta_curso_$num_pregunta label').removeClass('opacity-5');
+                    //     $('.encuesta_curso_$num_pregunta #op'+respuesta.val()+' label').addClass('opacity-5');
                     }
 
                     // Pinta la respuesta si es correcta o no

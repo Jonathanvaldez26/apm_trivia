@@ -1228,35 +1228,35 @@ html;
                             $(document).ready(function(){
                                 
                                 // Pinta la respuesta si es correcta o no
-                                console.log({$ha_respondido[$num_pregunta - 1]['respuesta_registrado']});
-                                if({$ha_respondido[$num_pregunta - 1]['respuesta_registrado']} == 1){
-                                    $('.encuesta_curso_$num_pregunta #op1 input').attr('checked','');
-                                    if(!$('.encuesta_curso_$num_pregunta #op1 label').hasClass('text-success')){
-                                        $('.encuesta_curso_$num_pregunta #op1 label').removeClass('text-dark').addClass('text-danger');
-                                    }
-                                } else if({$ha_respondido[$num_pregunta - 1]['respuesta_registrado']} == 2){
-                                    $('.encuesta_curso_$num_pregunta #op2 input').attr('checked','');
-                                    if(!$('.encuesta_curso_$num_pregunta #op2 label').hasClass('text-success')){
-                                        $('.encuesta_curso_$num_pregunta #op2 label').removeClass('text-dark').addClass('text-danger');
-                                    }
-                                } else if({$ha_respondido[$num_pregunta - 1]['respuesta_registrado']} == 3){
-                                    $('.encuesta_curso_$num_pregunta #op3 input').attr('checked','');
-                                    if(!$('.encuesta_curso_$num_pregunta #op3 label').hasClass('text-success')){
-                                        $('.encuesta_curso_$num_pregunta #op3 label').removeClass('text-dark').addClass('text-danger');
-                                    }
-                                } else if({$ha_respondido[$num_pregunta - 1]['respuesta_registrado']} == 4){
-                                    $('.encuesta_curso_$num_pregunta #op4 input').attr('checked','');
-                                    if(!$('.encuesta_curso_$num_pregunta #op4 label').hasClass('text-success')){
-                                        $('.encuesta_curso_$num_pregunta #op4 label').removeClass('text-dark').addClass('text-danger');
-                                    }
-                                }
+                                // console.log({$ha_respondido[$num_pregunta - 1]['respuesta_registrado']});
+                                // if({$ha_respondido[$num_pregunta - 1]['respuesta_registrado']} == 1){
+                                //     $('.encuesta_curso_$num_pregunta #op1 input').attr('checked','');
+                                //     if(!$('.encuesta_curso_$num_pregunta #op1 label').hasClass('text-success')){
+                                //         $('.encuesta_curso_$num_pregunta #op1 label').removeClass('text-dark').addClass('text-danger');
+                                //     }
+                                // } else if({$ha_respondido[$num_pregunta - 1]['respuesta_registrado']} == 2){
+                                //     $('.encuesta_curso_$num_pregunta #op2 input').attr('checked','');
+                                //     if(!$('.encuesta_curso_$num_pregunta #op2 label').hasClass('text-success')){
+                                //         $('.encuesta_curso_$num_pregunta #op2 label').removeClass('text-dark').addClass('text-danger');
+                                //     }
+                                // } else if({$ha_respondido[$num_pregunta - 1]['respuesta_registrado']} == 3){
+                                //     $('.encuesta_curso_$num_pregunta #op3 input').attr('checked','');
+                                //     if(!$('.encuesta_curso_$num_pregunta #op3 label').hasClass('text-success')){
+                                //         $('.encuesta_curso_$num_pregunta #op3 label').removeClass('text-dark').addClass('text-danger');
+                                //     }
+                                // } else if({$ha_respondido[$num_pregunta - 1]['respuesta_registrado']} == 4){
+                                //     $('.encuesta_curso_$num_pregunta #op4 input').attr('checked','');
+                                //     if(!$('.encuesta_curso_$num_pregunta #op4 label').hasClass('text-success')){
+                                //         $('.encuesta_curso_$num_pregunta #op4 label').removeClass('text-dark').addClass('text-danger');
+                                //     }
+                                // }
 
-                                $('.encuesta_curso_$num_pregunta').on('click',function(){
-                                    let respuesta = $('.encuesta_curso_$num_pregunta input[name=pregunta_$num_pregunta]:checked');
-                                    if($('.encuesta_curso_$num_pregunta #op'+respuesta.val()+' input').prop('checked')){
-                                        $('.encuesta_curso_$num_pregunta label').removeClass('opacity-5');
-                                        $('.encuesta_curso_$num_pregunta #op'+respuesta.val()+' label').addClass('opacity-5');
-                                    }
+                                // $('.encuesta_curso_$num_pregunta').on('click',function(){
+                                    //let respuesta = $('.encuesta_curso_$num_pregunta input[name=pregunta_$num_pregunta]:checked');
+                                    // if($('.encuesta_curso_$num_pregunta #op'+respuesta.val()+' input').prop('checked')){
+                                    //     $('.encuesta_curso_$num_pregunta label').removeClass('opacity-5');
+                                    //     $('.encuesta_curso_$num_pregunta #op'+respuesta.val()+' label').addClass('opacity-5');
+                                    // }
         
                                     // Pinta la respuesta si es correcta o no
                                     // if(respuesta.val() == {$value['respuesta_correcta']}){
@@ -1266,7 +1266,7 @@ html;
                                     //     $('.encuesta_curso_$num_pregunta label').addClass('text-dark');
                                     //     $('.encuesta_curso_$num_pregunta #op'+respuesta.val()+' label').removeClass('text-dark').addClass('text-danger');
                                     // }
-                                });
+                                // });
                                 
                             });
                         </script>

@@ -104,7 +104,7 @@
 
                         <div class="col-6 m-auto m-md-0 col-lg-3 col-md-4 my-md-3 mt-4">
                             <a href="#" data-toggle="modal" data-target="#encuesta">
-                                <div class="card card-link btn-menu-home m-auto"  style="background-image: url(/img/SMNP_Iconos/9_1.png); background-size: contain;">
+                                <div class="card card-link btn-menu-home m-auto"  style="background-image: url(/img/SMNP_Iconos/trivia.jpeg); background-size: contain;">
                                     <div class="card-body mt-md-3 text-center content-card-home">
                                         <div class="col-12 text-center">
                                             
@@ -285,7 +285,13 @@
     <script type='text/javascript'>
 
         $('#enviar_encuesta').on('click', function() {
-            alert('envio de formulario');
+            // alert('envio de formulario');
+            Swal.fire('trivia contestada correctamente', '', 'success');
+            setTimeout(function(){
+                location.reload();
+
+            },2000);        
+          
             let enc = $('.encuesta_completa');
             let id_curso = $('#id_curso').val();
 
@@ -313,31 +319,33 @@
                 success: function(respuesta) {
                     console.log(respuesta);
 
-                    if (respuesta.status == 'success') {
-                        Swal.fire('Se ha guardado su trivia', '', 'success').
-                        then((result) => {
-                            console.log('a');
-                            // $('#constancia_download').attr('href', respuesta.href)
-                            // $('#constancia_download')[0].click();
-                            // $('#constancia_download_1').attr('href',respuesta.href_download)
-                            // $('#constancia_download_1')[0].click();
-                            window.location.reload();
-                        });
-                    } else {
-                        Swal.fire('Lo sentimos, usted ya ha contestado la trivia', '', 'info').
-                        then((result) => {
-                            console.log('b');
-                            window.location.reload();
-                        });
-                    }
+                    
+
+                    // if (respuesta.status == 'success') {
+                    //     Swal.fire('Se ha guardado su trivia', '', 'success').
+                    //     then((result) => {
+                    //         console.log('a');
+                    //         // $('#constancia_download').attr('href', respuesta.href)
+                    //         // $('#constancia_download')[0].click();
+                    //         // $('#constancia_download_1').attr('href',respuesta.href_download)
+                    //         // $('#constancia_download_1')[0].click();
+                    //         window.location.reload();
+                    //     });
+                    // } else {
+                    //     Swal.fire('Lo sentimos, usted ya ha contestado la trivia', '', 'info').
+                    //     then((result) => {
+                    //         console.log('b');
+                    //         window.location.reload();
+                    //     });
+                    // }
 
                 },
                 error: function(respuesta) {
-                    console.log(respuesta);
-                    Swal.fire('Ha ocurrido un error, contacte con soporte', '', 'error').
-                    then((result) => {
-                        console.log('c');
-                    });
+                    // console.log(respuesta);
+                    // Swal.fire('Ha ocurrido un error, contacte con soporte', '', 'error').
+                    // then((result) => {
+                    //     console.log('c');
+                    // });
                 }
             });
         });
