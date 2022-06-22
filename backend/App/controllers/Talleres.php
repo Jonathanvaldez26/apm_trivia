@@ -1079,27 +1079,27 @@ html;
                             $encuesta .= <<<html
                             <div id="op1">
                                 <input type="radio" data-label="{$value['opcion1']}" id="opcion1_$num_pregunta" name="pregunta_$num_pregunta" value="1" disabled>
-                                <label class="text-success form-label opcion-encuesta" for="opcion1_$num_pregunta">{$value['opcion1']}</label>
+                                <label class="text-success form-label " for="opcion1_$num_pregunta">{$value['opcion1']}</label>
                             </div>
 
                             <div id="op2">
                                 <input type="radio" data-label="{$value['opcion2']}" id="opcion2_$num_pregunta" name="pregunta_$num_pregunta" value="2" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion2_$num_pregunta">{$value['opcion2']}</label>
+                                <label class="text-dark form-label " for="opcion2_$num_pregunta">{$value['opcion2']}</label>
                             </div>
 
                             <div id="op3">
                                 <input type="radio" data-label="{$value['opcion3']}" id="opcion3_$num_pregunta" name="pregunta_$num_pregunta" value="3" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion3_$num_pregunta">{$value['opcion3']}</label>
+                                <label class="text-dark form-label " for="opcion3_$num_pregunta">{$value['opcion3']}</label>
                             </div>
 
                             <div id="op4">
                                 <input type="radio" data-label="{$value['opcion4']}" id="opcion4_$num_pregunta" name="pregunta_$num_pregunta" value="4" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion4_$num_pregunta">{$value['opcion4']}</label>
+                                <label class="text-dark form-label " for="opcion4_$num_pregunta">{$value['opcion4']}</label>
                             </div>
 
                             <div id="op5">
                                 <input type="radio" data-label="{$value['opcion5']}" id="opcion5_$num_pregunta" name="pregunta_$num_pregunta" value="5" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion5_$num_pregunta">{$value['opcion5']}</label>
+                                <label class="text-dark form-label " for="opcion5_$num_pregunta">{$value['opcion5']}</label>
                             </div>
 html;
                         }
@@ -1108,27 +1108,27 @@ html;
                             $encuesta .= <<<html
                             <div id="op1">
                                 <input type="radio" data-label="{$value['opcion1']}" id="opcion1_$num_pregunta" name="pregunta_$num_pregunta" value="1" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion1_$num_pregunta">{$value['opcion1']}</label>
+                                <label class="text-dark form-label " for="opcion1_$num_pregunta">{$value['opcion1']}</label>
                             </div>
 
                             <div id="op2">
                                 <input type="radio" data-label="{$value['opcion2']}" id="opcion2_$num_pregunta" name="pregunta_$num_pregunta" value="2" disabled>
-                                <label class="text-success form-label opcion-encuesta" for="opcion2_$num_pregunta">{$value['opcion2']}</label>
+                                <label class="text-success form-label " for="opcion2_$num_pregunta">{$value['opcion2']}</label>
                             </div>
 
                             <div id="op3">
                                 <input type="radio" data-label="{$value['opcion3']}" id="opcion3_$num_pregunta" name="pregunta_$num_pregunta" value="3" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion3_$num_pregunta">{$value['opcion3']}</label>
+                                <label class="text-dark form-label " for="opcion3_$num_pregunta">{$value['opcion3']}</label>
                             </div>
 
                             <div id="op4">
                                 <input type="radio" data-label="{$value['opcion4']}" id="opcion4_$num_pregunta" name="pregunta_$num_pregunta" value="4" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion4_$num_pregunta">{$value['opcion4']}</label>
+                                <label class="text-dark form-label " for="opcion4_$num_pregunta">{$value['opcion4']}</label>
                             </div>
 
                             <div id="op5">
                                 <input type="radio" data-label="{$value['opcion5']}" id="opcion5_$num_pregunta" name="pregunta_$num_pregunta" value="5" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion5_$num_pregunta">{$value['opcion5']}</label>
+                                <label class="text-dark form-label " for="opcion5_$num_pregunta">{$value['opcion5']}</label>
                             </div>
 html;
                         }
@@ -1137,27 +1137,27 @@ html;
                             $encuesta .= <<<html
                             <div id="op1">
                                 <input type="radio" data-label="{$value['opcion1']}" id="opcion1_$num_pregunta" name="pregunta_$num_pregunta" value="1" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion1_$num_pregunta">{$value['opcion1']}</label>
+                                <label class="text-dark form-label " for="opcion1_$num_pregunta">{$value['opcion1']}</label>
                             </div>
 
                             <div id="op2">
                                 <input type="radio" data-label="{$value['opcion2']}" id="opcion2_$num_pregunta" name="pregunta_$num_pregunta" value="2" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion2_$num_pregunta">{$value['opcion2']}</label>
+                                <label class="text-dark form-label " for="opcion2_$num_pregunta">{$value['opcion2']}</label>
                             </div>
 
                             <div id="op3">
                                 <input type="radio" data-label="{$value['opcion3']}" id="opcion3_$num_pregunta" name="pregunta_$num_pregunta" value="3" disabled>
-                                <label class="text-success form-label opcion-encuesta" for="opcion3_$num_pregunta">{$value['opcion3']}</label>
+                                <label class="text-success form-label " for="opcion3_$num_pregunta">{$value['opcion3']}</label>
                             </div>
 
                             <div id="op4">
                                 <input type="radio" data-label="{$value['opcion4']}" id="opcion4_$num_pregunta" name="pregunta_$num_pregunta" value="4" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion4_$num_pregunta">{$value['opcion4']}</label>
+                                <label class="text-dark form-label " for="opcion4_$num_pregunta">{$value['opcion4']}</label>
                             </div>
 
                             <div id="op5">
                                 <input type="radio" data-label="{$value['opcion5']}" id="opcion5_$num_pregunta" name="pregunta_$num_pregunta" value="5" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion5_$num_pregunta">{$value['opcion5']}</label>
+                                <label class="text-dark form-label " for="opcion5_$num_pregunta">{$value['opcion5']}</label>
                             </div>
 html;
                         }
@@ -1166,27 +1166,27 @@ html;
                             $encuesta .= <<<html
                             <div id="op1">
                                 <input type="radio" data-label="{$value['opcion1']}" id="opcion1_$num_pregunta" name="pregunta_$num_pregunta" value="1" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion1_$num_pregunta">{$value['opcion1']}</label>
+                                <label class="text-dark form-label " for="opcion1_$num_pregunta">{$value['opcion1']}</label>
                             </div>
 
                             <div id="op2">
                                 <input type="radio" data-label="{$value['opcion2']}" id="opcion2_$num_pregunta" name="pregunta_$num_pregunta" value="2" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion2_$num_pregunta">{$value['opcion2']}</label>
+                                <label class="text-dark form-label " for="opcion2_$num_pregunta">{$value['opcion2']}</label>
                             </div>
 
                             <div id="op3">
                                 <input type="radio" data-label="{$value['opcion3']}" id="opcion3_$num_pregunta" name="pregunta_$num_pregunta" value="3" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion3_$num_pregunta">{$value['opcion3']}</label>
+                                <label class="text-dark form-label " for="opcion3_$num_pregunta">{$value['opcion3']}</label>
                             </div>
 
                             <div id="op4">
                                 <input type="radio" data-label="{$value['opcion4']}" id="opcion4_$num_pregunta" name="pregunta_$num_pregunta" value="4" disabled>
-                                <label class="text-success form-label opcion-encuesta" for="opcion4_$num_pregunta">{$value['opcion4']}</label>
+                                <label class="text-success form-label " for="opcion4_$num_pregunta">{$value['opcion4']}</label>
                             </div>
 
                             <div id="op5">
                                 <input type="radio" data-label="{$value['opcion5']}" id="opcion5_$num_pregunta" name="pregunta_$num_pregunta" value="5" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion5_$num_pregunta">{$value['opcion5']}</label>
+                                <label class="text-dark form-label " for="opcion5_$num_pregunta">{$value['opcion5']}</label>
                             </div>
 html;
                         }
@@ -1195,27 +1195,27 @@ html;
                             $encuesta .= <<<html
                             <div id="op1">
                                 <input type="radio" data-label="{$value['opcion1']}" id="opcion1_$num_pregunta" name="pregunta_$num_pregunta" value="1" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion1_$num_pregunta">{$value['opcion1']}</label>
+                                <label class="text-dark form-label " for="opcion1_$num_pregunta">{$value['opcion1']}</label>
                             </div>
 
                             <div id="op2">
                                 <input type="radio" data-label="{$value['opcion2']}" id="opcion2_$num_pregunta" name="pregunta_$num_pregunta" value="2" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion2_$num_pregunta">{$value['opcion2']}</label>
+                                <label class="text-dark form-label " for="opcion2_$num_pregunta">{$value['opcion2']}</label>
                             </div>
 
                             <div id="op3">
                                 <input type="radio" data-label="{$value['opcion3']}" id="opcion3_$num_pregunta" name="pregunta_$num_pregunta" value="3" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion3_$num_pregunta">{$value['opcion3']}</label>
+                                <label class="text-dark form-label " for="opcion3_$num_pregunta">{$value['opcion3']}</label>
                             </div>
 
                             <div id="op4">
                                 <input type="radio" data-label="{$value['opcion4']}" id="opcion4_$num_pregunta" name="pregunta_$num_pregunta" value="4" disabled>
-                                <label class="text-dark form-label opcion-encuesta" for="opcion4_$num_pregunta">{$value['opcion4']}</label>
+                                <label class="text-dark form-label " for="opcion4_$num_pregunta">{$value['opcion4']}</label>
                             </div>
 
                             <div id="op5">
                                 <input type="radio" data-label="{$value['opcion5']}" id="opcion5_$num_pregunta" name="pregunta_$num_pregunta" value="5" disabled>
-                                <label class="text-success form-label opcion-encuesta" for="opcion5_$num_pregunta">{$value['opcion5']}</label>
+                                <label class="text-success form-label " for="opcion5_$num_pregunta">{$value['opcion5']}</label>
                             </div>
 html;
                         }
@@ -1284,22 +1284,22 @@ html;
                             <div class="form-group encuesta_curso_$num_pregunta">
                                 <div id="op1">
                                     <input type="radio" data-label="{$value['opcion1']}" id="opcion1_$num_pregunta" name="pregunta_$num_pregunta" value="1" required>
-                                    <label class="form-label opcion-encuesta" for="opcion1_$num_pregunta">{$value['opcion1']}</label>
+                                    <label class="form-label " for="opcion1_$num_pregunta">{$value['opcion1']}</label>
                                 </div>
     
                                 <div id="op2">
                                     <input type="radio" data-label="{$value['opcion2']}" id="opcion2_$num_pregunta" name="pregunta_$num_pregunta" value="2">
-                                    <label class="form-label opcion-encuesta" for="opcion2_$num_pregunta">{$value['opcion2']}</label>
+                                    <label class="form-label " for="opcion2_$num_pregunta">{$value['opcion2']}</label>
                                 </div>
     
                                 <div id="op3">
                                     <input type="radio" data-label="{$value['opcion3']}" id="opcion3_$num_pregunta" name="pregunta_$num_pregunta" value="3">
-                                    <label class="form-label opcion-encuesta" for="opcion3_$num_pregunta">{$value['opcion3']}</label>
+                                    <label class="form-label " for="opcion3_$num_pregunta">{$value['opcion3']}</label>
                                 </div>
     
                                 <div id="op4">
                                     <input type="radio" data-label="{$value['opcion4']}" id="opcion4_$num_pregunta" name="pregunta_$num_pregunta" value="4">
-                                    <label class="form-label opcion-encuesta" for="opcion4_$num_pregunta">{$value['opcion4']}</label>
+                                    <label class="form-label " for="opcion4_$num_pregunta">{$value['opcion4']}</label>
                                 </div>
                                 
                             </div>
@@ -1458,7 +1458,7 @@ html;
         $respuestas = $_POST['list_r'];
         $id_curso = $_POST['id_curso'];
 
-        $ha_respondido = TalleresDao::getRespuestasCurso($_SESSION['user_id'], $id_curso);
+        // $ha_respondido = TalleresDao::getRespuestasCurso($_SESSION['user_id'], $id_curso);
 
         // var_dump($respuestas);
         $userData = RegisterDao::getUser($this->getUsuario())[0];
@@ -1467,18 +1467,18 @@ html;
 
         // exit;
 
-        if ($ha_respondido) {
-            // echo 'fail';
-            $data = [
-                'status' => 'success',
-                'clave_user' => $userData['clave']
-            ];
-            echo json_encode($data);
-        } else {
+        // if ($ha_respondido) {
+        //     // echo 'fail';
+        //     $data = [
+        //         'status' => 'success',
+        //         'clave_user' => $userData['clave']
+        //     ];
+        //     echo json_encode($data);
+        // } else {
             foreach ($respuestas as $key => $value) {
                 $id_pregunta = $value[0];
                 $respuesta = $value[1];
-                TalleresDao::insertRespuestaProductCurso($_SESSION['user_id'], $id_pregunta, $respuesta);
+                TalleresDao::insertRespuestaVideoCongreso($_SESSION['user_id'], $id_pregunta, $respuesta);
             }
             // echo 'success';
             $data = [
@@ -1488,7 +1488,7 @@ html;
                 'href_download' => 'constancias/' . $userData['clave'] . $id_curso . '.pdf'
             ];
             echo json_encode($data);
-        }
+        // }
     }
 
     public function updateProgress()

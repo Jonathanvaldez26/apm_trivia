@@ -1,10 +1,21 @@
+<!--<title>
+    Home 
+</title>-->
 <?php echo $header; ?>
 <link id="pagestyle" href="/assets/css/soft-ui-dashboard.css?v=1.0.5" rel="stylesheet" />
-
 <body class="bg-body" id="body-home">
 
+<!-- <div id="content"> -->
+    
     <main>
+        <!-- <video class="video-fondo" autoplay="true" muted="false" loop="true" src="/videos/dfic.mp4" type="video/mp4">
+        </video> -->
+
+        <!-- <div class="barra-amarilla"></div> -->
+
         <div class="barra-verde"></div>
+      
+        <!-- Navbar -->
         <nav class="navbar navbar-main navbar-expand-lg bg-gradient-yellow position-sticky mt-4 top-1 px-0 mx-4 shadow-none border-radius-xl z-index-sticky" id="navbarBlur" data-scroll="true">
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
@@ -27,40 +38,10 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item text-sm"><a class="opacity-10 text-dark" href="javascript:;">Inicio</a></li>
-
                     </ol>
-
-
                 </nav>
 
-                <div id="cont_menu_end">
-
-                    <ul class="navbar-nav  justify-content-end">
-                        <li class="nav-item d-flex align-items-center">
-                            <a href="/Account" class="nav-link text-body font-weight-bold  mx-0  px-0">
-                                <i class="fa fa-user me-sm-0"></i>
-
-                                <?php
-                                $apellido = $datos['surname'];
-                                $arr1 = str_split($apellido);
-
-                                ?>
-                                <span class="d-sm-inline "><?php echo $datos['name_user'] . " " . $arr1[0] . "."; ?></span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item d-flex align-items-center">
-                            <a href="/Login/cerrarSession" class="nav-link text-body font-weight-bold px-0">
-                                <i class="fa fa-power-off me-sm-1"></i>
-                                <span class="d-sm-inline ">Logout</span>
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-                <input type="hidden" name="datos" id="datos" value="<?php echo $datos; ?>">
+                <input type="hidden" name="datos" id="datos" value="<?php echo $datos;?>">
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                         <div class="input-group"></div>
@@ -72,11 +53,11 @@
                                 <i class="fa fa-user me-sm-0"></i>
                                 <!-- <span class="d-sm-inline d-none">Mi Cuenta</span> -->
                                 <?php
-                                $apellido = $datos['surname'];
-                                $arr1 = str_split($apellido);
-
+                                    $apellido = $datos['surname'];                                    
+                                    $arr1 = str_split($apellido);                         
+                                   
                                 ?>
-                                <span class="d-sm-inline "><?php echo $datos['name_user'] . " " . $arr1[0] . "."; ?></span>
+                                <span class="d-sm-inline d-none"><?php echo $datos['name_user'] ." ".$arr1[0].".";?></span>
                             </a>
                         </li>
                     </ul>
@@ -84,409 +65,386 @@
                         <li class="nav-item d-flex align-items-center">
                             <a href="/Login/cerrarSession" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-power-off me-sm-1"></i>
-                                <span class="d-sm-inline ">Logout</span>
+                                <span class="d-sm-inline d-none">Logout</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-
-
         </nav>
 
+        
+        <!-- End Navbar -->
         <div class="container-fluid py-0">
-            <div class="card col-lg-12 mt-lg-4 mt-1">
-                <div class="card-header pb-0 p-3">
-                    <p style="font-size: 14px">(Seleccione a continuación lo que desea pagar y presione el boton de pagar y muestre el codigo de pago en caja)</p>
-                </div>
-                <div class="card-body px-5 pb-5">
 
+        <div class="row mt-3">
+                <?php //echo $card_cursos;?>
+        </div>        
+            <div class="row">
+                <div class="col-xl-12 mt-xl-0 mt-0">
+                    <div class="row mt-md-4 mt-0">
 
-
-                    <div class="row">
-                        <div class="col-md-8">
-
-                            <div id="cont-checks">
-
-                                <?php echo $checks ?>
-
-
-                            </div>
-
+                        <!-- <div class="col-6 m-auto m-md-0 col-lg-3 col-md-4 my-md-3 mt-4">
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-12 col-md-12">
+                                    <a href="#">
+                                        <div class="card card-link btn-menu-home m-auto"  style="background-image: url(/img/SMNP_Iconos/1.png)">
+                                            <div class="card-body mt-md-3 text-center content-card-home">
+                                                <div class="col-12 text-center">
+                                                   
+                                                </div>
 
-                                    <div id="buttons">
-                                        <input type="hidden" id="tipo_cambio" value="<?= $tipo_cambio ?>">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <p>Productos agregados: <span id="productos_agregados"><?= $total_productos ?></span></p>
-
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <p>Su pago en dolares es: $ <span id="total"><?= $total_pago ?></span> USD</p>
-
-                                                <p>Su pago en pesos mexicanos es: $ <span id="total_mx"><?= $total_pago_mx ?></span> </p>
-
+                                                
                                             </div>
                                         </div>
-
-
-                                    </div>
+                                    </a>
                                 </div>
-
                             </div>
+                        </div> -->
 
-
-                            <div class="row">
-                                <div class="col-md-12">
-
-                                    <div id="buttons">
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-
-
-                                            </div>
-
-                                            <div class="col-md-6" style="display: flex; justify-content: end;">
-
-                                                <button class="btn btn-primary" id="btn_pago" <?= $btn_block ?>>Proceder al pago</button>
-                                            </div>
+                        <div class="col-6 m-auto m-md-0 col-lg-3 col-md-4 my-md-3 mt-4">
+                            <a href="#" data-toggle="modal" data-target="#encuesta">
+                                <div class="card card-link btn-menu-home m-auto"  style="background-image: url(/img/SMNP_Iconos/9_1.png); background-size: contain;">
+                                    <div class="card-body mt-md-3 text-center content-card-home">
+                                        <div class="col-12 text-center">
+                                            
+                                            
                                         </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-4">
-                            <div id="cont-image">
-                                <img src="<?= $src_qr ?>" id="img_qr" style="width: auto; display: block; margin: 0 auto;<?= $ocultar ?>" alt="">
-                                <input type="hidden" id="clave" name="clave" value="<?= $clave ?>">
-
-                            </div>
-                            <div style="display: flex; justify-content: center;">
-                                <?= $btn_imp ?>
-                            </div>
-                        </div>
-
-                    </div>
-                    <br>
-
-
-
-                    <br>
-                    <div class="row">
-                        <div class="col-md-8">
-
-                            <div id="buttons">
-
-
-                                <!-- <div class="row">
-                                    <div class="col-md-6">
                                         
-
+                                        
                                     </div>
+                                </div>
+                            </a>
+                        </div>
 
-                                    <div class="col-md-6" style="display: flex; justify-content: end;">
-                                        <div class="form-group">
-                                            <label>Elige tu metodo de pago *</label>
-                                            <select class="multisteps-form__select form-control all_input_second_select metodo_pago" name="metodo_pago" id="metodo_pago" required>
-                                                <option value="" disabled selected>Selecciona una Opción</option>
-                                                <option value="Paypal">Paypal</option>
-                                                <option value="Efectivo">Efectivo / Transferencia electrónica</option>
-                                            </select>
+                        
+                        
+                        <!-- <div class="col-6 m-auto m-md-0 col-lg-3 col-md-4 my-md-3 mt-4">
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <a href="/Transmission/">
+                                        <div class="card card-link btn-menu-home m-auto"  style="background-image: url(/img/SMNP_Iconos/7.png); background-size: contain;">
+                                            <div class="card-body mt-md-3 text-center content-card-home">
+                                                <div class="col-12 text-center">
+                                                  
+                                                </div>                                               
+                                            </div>
                                         </div>
-                                    </div>
-                               </div> -->
+                                    </a>
+                                </div>
+                            </div>
+                        </div> -->
+                        
 
+                        <div class="col-6 m-auto m-md-0 col-lg-3 col-md-4 my-md-3 mt-4">
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <a href="/Login/cerrarSession">
+                                        <div class="card card-link btn-menu-home m-auto"  style="background-image: url(/img/SMNP_Iconos/15.png); background-size: contain;  object-position: center center;">
+                                            <div class="card-body mt-md-3 text-center content-card-home">
+                                                <div class="col-12 text-center">
+                                               
+                                                </div>
 
+                                             
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
+
+                        
+                       
+                        <!-- <div class="col-6 m-auto m-md-0 col-lg-3 col-md-4 my-md-3 mt-4">
+                            <a href="#">
+                                <div class="card card-link btn-menu-home m-auto"  style="background-image: url(/img/SMNP_Iconos/5.png)">
+                                    <div class="card-body mt-md-3 text-center content-card-home">
+                                        <div class="col-12 text-center">
+                                            <img class="w-30 btn-img-home" src="../../assets/img/icons/iCONOS_Mesa de trabajo 1.png">
+                                            <span class="color-yellow fas fa-spinner text-large"></span>
+                                        </div>
+                                        
+                                        <h6 class="mb-0 mt-2 mt-md-4 font-weight-bolder text-btn color-green">Avances</h6>
+                                        <p class="opacity-8 mb-0 text-sm">Disponible <i class="fa fa-clock me-sm-0" style="color: #8a6d3b"></i></p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div> -->
+                        <!-- <div class="col-6 m-auto m-md-0 col-lg-3 col-md-4 my-md-3 mt-4">
+                            <a href="/Profesores/">
+                                <div class="card card-link btn-menu-home m-auto"  style="background-image: url(/img/SMNP_Iconos/15.png)">
+                                    <div class="card-body mt-md-3 text-center content-card-home">
+                                        <div class="col-12 text-center">
+                                           
+                                        </div>
+                                        
+                                   
+                                    </div>
+                                </div>
+                            </a>
+                        </div> -->
+                        <!-- <div class="col-6 m-auto m-md-0 col-lg-3 col-md-4 my-md-3 mt-4">
+                            <a href="/TrabajosLibres/">
+                                <div class="card card-link btn-menu-home m-auto"  style="background-image: url(/img/SMNP_Iconos/7.png)">
+                                    <div class="card-body mt-md-3 text-center content-card-home">
+                                        <div class="col-12 text-center">
+                                           
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </a>
+                        </div> -->
+                        <!-- <div class="col-6 m-auto m-md-0 col-lg-3 col-md-4 my-md-3 mt-4">
+                            <a href="/Patrocinadores/">
+                                <div class="card card-link btn-menu-home m-auto"  style="background-image: url(/img/SMNP_Iconos/12.png)">
+                                    <div class="card-body mt-md-3 text-center content-card-home">
+                                        <div class="col-12 text-center">
+                                            
+                                        </div>
+                                        
+                                      
+                                    </div>
+                                </div>
+                            </a>
+                        </div> -->
+                        <!-- <div class="col-6 m-auto m-md-0 col-lg-3 col-md-4 my-md-3 mt-4">
+                            <a href="#">
+                                <div class="card card-link btn-menu-home m-auto"  style="background-image: url(/img/SMNP_Iconos/9.png)">
+                                    <div class="card-body mt-md-3 text-center content-card-home">
+                                        <div class="col-12 text-center">
+                                            <img class="w-30 btn-img-home" src="../../assets/img/icons/iCONOS-07.png">
+                                            <span class="color-yellow fas fa-tasks text-large"></span>
+                                        </div>
+                                        
+                                        <h6 class="mb-0 mt-2 mt-md-4 font-weight-bolder text-btn color-green">Plenarias</h6>
+                                        <p class="opacity-8 mb-0 text-sm">A un click</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div> -->
+                        <!-- <div class="col-6 m-auto m-md-0 col-lg-3 col-md-4 my-md-3 mt-4">
+                            <a href="/AreaComercial/">
+                                <div class="card card-link btn-menu-home m-auto"  style="background-image: url(/img/SMNP_Iconos/11.png)">
+                                    <div class="card-body mt-md-3 text-center content-card-home">
+                                        <div class="col-12 text-center">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div> -->
                     </div>
-
-
-                    <br>
-
-
-
-
-                    <!-- <div class="table-responsive p-0">
-                                        <table class="align-items-center mb-0 table table-borderless" style="width:100%">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Productos</th>
-                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Costo</th>
-                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#</th>
-                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"><i class="fa fa-eye"></i></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php echo $tabla; ?>
-                                        </tbody>
-                                    </table>
-                                </div>  -->
-
+                        
                 </div>
             </div>
+
         </div>
+
+         <?php //echo $footer; ?> 
     </main>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script>
-        $(document).ready(function() {
+<!-- </div> -->
+    <?php echo $modalComprar?>
 
-            // var precios=<?php echo json_encode($array_precios); ?>;
+    <div class="modal fade" id="encuesta" role="dialog" aria-labelledby="encuestaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-size" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="encuestaLabel">Examen para <?php echo $nombre_taller; ?></h5>
+                    <button type="button" class="btn bg-gradient-danger text-lg btn-icon-only" data-dismiss="modal" aria-label="Close">
+                        <span class="" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="encuesta_curso" action="" method="post">
+                    <div class="modal-body">
+                        <div>
+                            <p class="text-success text-center">
+                                <strong>Instrucciones:</strong> Responde a cada una de las preguntas, que a continuación se presentan
+                            </p>
+                        </div>
+                        <hr class="horizontal dark my-3">
+                        <div class="encuesta">
+                            <?php echo $encuesta; ?>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="enviar_encuesta" class="btn bg-gradient-success">Enviar</button>
+                        <a href="" id="constancia_download" target="_blank" download style="display: none;">descargar</a>
+                        <a href="" id="constancia_download_1" download style="display: none;">descargar</a>
+                        <button type="button" class="btn bg-gradient-secondary" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-            var precios = [];
-            var productos = [];
-            var total = 0;
-
-            // if (precios.length <= 0) {
-
-            //     $("#btn_pago").attr('disabled','disabled');
-
-            // }
-
-            // console.log(precios_anteriores);
-
-            // console.log(precios_anteriores.length);
-
-            $(".checks_product").on("change", function() {
-                var id_product = $(this).val();
-                var precio = $(this).attr('data-precio');
-                var cantidad = $("#numero_articulos" + id_product).val();
-                var nombre_producto = $(this).attr('data-nombre-producto');
 
 
 
-                if (this.checked) {
+    <script type='text/javascript'>
 
-                    precios.push({
-                        'id_product': id_product,
-                        'precio': precio,
-                        'cantidad': cantidad
-                    });
-                    sumarPrecios(precios);
+        $('#enviar_encuesta').on('click', function() {
+            alert('envio de formulario');
+            let enc = $('.encuesta_completa');
+            let id_curso = $('#id_curso').val();
 
-                    productos.push({
-                        'id_product': id_product,
-                        'precio': precio,
-                        'cantidad': cantidad,
-                        'nombre_producto': nombre_producto
-                    });
-
-                } else if (!this.checked) {
-
-                    for (var i = 0; i < precios.length; i++) {
-
-                        if (precios[i].id_product === id_product) {
-                            console.log("remover");
-                            precios.splice(i, 1);
-
-                            productos.splice(i, 1);
-                        } else if (precios[i].id_product === id_product && precios[i].cantidad === cantidad) {
-                            precios.splice(i, 1);
-
-                            productos.splice(i, 1);
-
-                        }
-                    }
-
-                    $.ajax({
-                        url: "/Home/removePendientesPago",
-                        type: "POST",
-                        data: {
-                            id_product,cantidad
-                        },
-                        cache: false,
-                        beforeSend: function() {
-                            console.log("Procesando....");
-
-                        },
-                        success: function(respuesta) {
-
-                            console.log(respuesta);
-                            if(respuesta == "success"){
-                                location.reload();
-                            }
-
-                            // if (respuesta.status == 'success') {
-                            //     $("#img_qr").attr("src", respuesta.src);
-                            //     $("#img_qr").css('display', 'block');
-                            //     Swal.fire("¡Mantenga a la mano su codigo QR para pagar en linea de cajas!", "", "success").
-                            //     then((value) => {
-                            //         window.location.reload();
-                            //     });
-                            // }
-
-                        },
-                        error: function(respuesta) {
-                            console.log(respuesta);
-                        }
-
-                    });
-                }
-                console.log(productos);
-                sumarPrecios(precios);
-
-            });
-
-            $(".select_numero_articulos").on("change", function() {
-                var id_producto = $(this).attr('data-id-producto');
-                var cantidad = $(this).val();
-                var precio = $(this).attr('data-precio');
-                var nombre_producto = $(this).attr('data-nombre-producto');
-
-                if ($("#check_curso_" + id_producto).is(':checked')) {
-
-                    for (var i = 0; i < precios.length; i++) {
-
-                        if (precios[i].id_product === id_producto && precios[i].cantidad != cantidad) {
-                            console.log("remover");
-                            precios.splice(i, 1, {
-                                'id_product': id_producto,
-                                'precio': precio,
-                                'cantidad': cantidad
-                            });
-
-                            productos.splice(i, 1, {
-                                'id_product': id_producto,
-                                'precio': precio,
-                                'cantidad': cantidad,
-                                'nombre_producto': nombre_producto
-                            });
-
-                            // precios.push({'id_product':id_product,'precio':precio,'cantidad':cantidad});
-                        }
-
-                    }
-                    console.log(precios.length);
-
-                    console.log(productos);
-
-                    sumarPrecios(precios);
-
-                }
-
-            });
-
-            function sumarPrecios(precios) {
-                console.log(precios);
-
-                var sumaPrecios = <?= $total_pago ?>;
-                var sumaArticulos = <?= $total_productos ?>;
-
-                precios.forEach(function(precio, index) {
-
-                    console.log("precio " + index + " | id_product: " + precio.id_product + " precio: " + parseInt(precio.precio) + " cantidad: " + parseInt(precio.cantidad))
-
-                    sumaPrecios += parseInt(precio.precio * precio.cantidad);
-                    sumaArticulos += parseInt(precio.cantidad);
-
-                });
-
-                console.log("Suma precios " + sumaPrecios);
-
-                $("#total").html(sumaPrecios);
-
-                $("#total_mx").html(($("#tipo_cambio").val() * sumaPrecios).toFixed(2));
-
-                console.log("Suma Articulos " + sumaArticulos);
-
-                $("#productos_agregados").html(sumaArticulos);
-
+            for (let index = 0; index < enc.length; index++) {
+                const respuesta = enc[index];
+                let id = $('#id_pregunta_' + (index + 1)).val();
+                let res = $('input[name=pregunta_' + (index + 1) + ']:checked', enc[index]).val();
+                let res_id = [id, res];
+                list_r.push(res_id);
+                // console.log(res_id);
             }
 
-            $("#btn_pago").on("click", function(event) {
-                event.preventDefault();
-                // var metodo_pago = $("#metodo_pago").val();
-                var clave = $("#clave").val();
+            // alert(list_r);
+            $.ajax({
+                url: "/Talleres/guardarRespuestas",
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    list_r,
+                    id_curso
+                },
+                beforeSend: function() {
+                    console.log("Procesando....");
+                },
+                success: function(respuesta) {
+                    console.log(respuesta);
 
-                if (precios.length <= 0) {
+                    if (respuesta.status == 'success') {
+                        Swal.fire('Se ha guardado su trivia', '', 'success').
+                        then((result) => {
+                            console.log('a');
+                            // $('#constancia_download').attr('href', respuesta.href)
+                            // $('#constancia_download')[0].click();
+                            // $('#constancia_download_1').attr('href',respuesta.href_download)
+                            // $('#constancia_download_1')[0].click();
+                            window.location.reload();
+                        });
+                    } else {
+                        Swal.fire('Lo sentimos, usted ya ha contestado la trivia', '', 'info').
+                        then((result) => {
+                            console.log('b');
+                            window.location.reload();
+                        });
+                    }
 
-                    Swal.fire("¡Debes seleccionar al menos un producto!", "", "warning")
-                   
-
-                } else {
-                    var plantilla_productos = '';
-
-                    plantilla_productos += `<ul>`;
-
-
-                    $.each(productos, function(key, value) {
-                        console.log("funcioina");
-                        console.log(value);
-                        plantilla_productos += `<li style="text-align: justify; font-size:14px;">
-                                                    ${value.nombre_producto} Cant. ${value.cantidad}
-                                                </li>`;
+                },
+                error: function(respuesta) {
+                    console.log(respuesta);
+                    Swal.fire('Ha ocurrido un error, contacte con soporte', '', 'error').
+                    then((result) => {
+                        console.log('c');
                     });
-
-                    plantilla_productos += `</ul>`;
-                    plantilla_productos += `<p><strong>Total en dolares: $ ${$("#total").text()} USD </strong></p>`;
-                    plantilla_productos += `<p><strong>Total en pesos mexicanos: $ ${$("#total_mx").text()}</strong></p>`;
-
-                    plantilla_productos += `<p>Confirme su selección y de clic en procesar compra y espere su turno en línea de cajas.</p>`;
-
-
-                    Swal.fire({
-                        title: 'Usted selecciono los siguientes productos',
-                        text: '',
-                        html: plantilla_productos,
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        cancelButtonText: 'Cancelar',
-                        confirmButtonText: 'Procesar Compra'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-
-                            $.ajax({
-                                url: "/Home/generaterQr",
-                                type: "POST",
-                                data: {
-                                    'array': JSON.stringify(precios),
-                                    clave
-                                },
-                                cache: false,
-                                dataType: "json",
-                                // contentType: false,
-                                // processData: false,
-                                beforeSend: function() {
-                                    console.log("Procesando....");
-
-                                },
-                                success: function(respuesta) {
-
-                                    console.log(respuesta);
-
-                                    if (respuesta.status == 'success') {
-                                        $("#img_qr").attr("src", respuesta.src);
-                                        $("#img_qr").css('display', 'block');
-                                        Swal.fire("¡Mantenga a la mano su codigo QR para pagar en linea de cajas!", "", "success").
-                                        then((value) => {
-                                            window.location.reload();
-                                        });
-                                    }
-
-                                },
-                                error: function(respuesta) {
-                                    console.log(respuesta);
-                                }
-
-                            });
-                        }
-                    })
                 }
             });
-
-
         });
+
+        getData($("#datos").val());
+        function getData(datos){
+            $.ajax({
+                    url:"/Home/getData",
+                    type: "POST",
+                    data: {datos},                   
+                    beforeSend: function(){
+                        console.log("Procesando....");
+
+                    
+                    },
+                    success: function(respuesta){
+
+                        console.log(respuesta);
+                        if(respuesta == 0){
+                            Swal.fire({
+                            title: '¡Es necesario que actualice sus datos.!',
+                            text: "",
+                            icon: 'info',
+                            showCancelButton: true,
+                            showCancelButton: false,
+                            // allowOutsideClick: false,
+                            confirmButtonColor: '#3085d6'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.replace("/Account/");
+                                }
+                            })
+                        }
+
+                    },
+                    error:function (respuesta)
+                    {
+                        
+                        console.log(respuesta);
+                    }
+
+                });
+        }
+    $(function(){
+        
+        $(document).bind("contextmenu",function(e){
+            return true;
+        });
+
+        $('.heart-not-like').on('click', function(){
+            let clave = $(this).attr('data-clave');
+            let heart = $(this);
+
+            if (heart.hasClass('heart-like')) {
+                heart.removeClass('heart-like').addClass('heart-not-like');
+            } else {
+                heart.removeClass('heart-not-like').addClass('heart-like');
+            }
+            console.log('se cambió a like: '+clave);
+            $.ajax({
+                url: "/Talleres/Likes",
+                type: "POST",
+                data: {clave},
+                beforeSend: function() {
+                    console.log("Procesando....");
+                },
+                success: function(respuesta) {
+                    console.log(respuesta);
+                    
+                },
+                error: function(respuesta) {
+                    console.log(respuesta);
+                }
+            });
+        })
+
+        $('.heart-like').on('click', function(){
+            let clave = $(this).attr('data-clave');
+            let heart = $(this);
+
+            if (heart.hasClass('heart-like')) {
+                heart.removeClass('heart-like').addClass('heart-not-like');
+            } else {
+                heart.removeClass('heart-not-like').addClass('heart-like');
+            }
+            console.log('se cambió a like: '+clave);
+            $.ajax({
+                url: "/Talleres/Likes",
+                type: "POST",
+                data: {clave},
+                beforeSend: function() {
+                    console.log("Procesando....");
+                },
+                success: function(respuesta) {
+                    console.log(respuesta);
+                    
+                },
+                error: function(respuesta) {
+                    console.log(respuesta);
+                }
+            });
+        })
+    });
+
+   
+
     </script>
-
-
 </body>
+
+

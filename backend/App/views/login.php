@@ -149,7 +149,7 @@ echo $header;
                                 </div>
                                 <!-- Button trigger modal -->
                                 <div class="card-body">
-                                    <!--<form role="form" class="text-start" id="login" action="/Login/crearSession" method="POST" class="form-horizontal">
+                                    <form role="form" class="text-start" id="login" action="/Login/crearSession" method="POST" class="form-horizontal">
                                         <label style="font-weight:bold; font-size: 15px">Correo electrónico</label>
                                         <div class="mb-5">
                                             <input type="email" name="usuario" id="usuario" class="form-control" placeholder="usuario@grupolahe.com" aria-label="Email">
@@ -158,8 +158,8 @@ echo $header;
                                         <div class="text-center">
                                             <button type="button" id="btnEntrar" class="btn bg-gradient-info w-100 mt-1 mb-0"><b style="color: #FFFFFF">ENTRAR</b></button>
                                         </div>
-                                    </form>-->
-                                    <!-- <button type="button" style="background: #1B8586; color: #ffffff;" id="btn_modal_add" class="btn mb-0 mt-3 w-100" data-toggle="modal" data-target="#Modal_Add" disabled="">REGISTRARSE</button> -->
+                                    </form>
+                                     <button type="button" style="background: #1B8586; color: #ffffff;" id="btn_modal_add" class="btn mb-0 mt-3 w-100" data-toggle="modal" data-target="#Modal_Add" disabled="">REGISTRARSE</button> 
                                     <!-- <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                         <p class="mb-2 text-sm mx-auto">
                                             ¿Olvido su contraseña?

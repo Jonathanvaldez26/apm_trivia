@@ -34,217 +34,72 @@ html;
 
         $data_user = HomeDao::getDataUser($this->__usuario);
 
-        $productos_pendientes_comprados = HomeDao::getProductosPendComprados($data_user['user_id']);
-        $checks = '';
-        $total_productos = 0;
-        $total_pago = 0;
-        $check_disabled = '';
-        $array_precios = [];
+        $encuesta = '';
+       
+        $preguntas  = TalleresDao::getPreguntasByVideoCongreso(1);
 
-        $clave = HomeDao::getProductosPendCompradosClave($data_user['user_id'])[0]['clave'];
-
-
-        if($clave != ""){
-            $src_qr = '/qrs/'.$productos_pendientes_comprados[0]['clave'].'.png';
-            // $src_qr = '/qrs/'.$clave.'.png';           
-            // $btn_block = 'style = "display:none"';
-            // $check_disabled = 'disabled';
-        }else{
-            $src_qr = '';
-            $btn_block = '';
-            
-        }   
-
-        
-
-        foreach($productos_pendientes_comprados as $key => $value) {
-            $disabled = '';
-            $checked = '';
-            $pend_validar ='';
-
-            if($value['es_congreso'] == 1 && $value['clave_socio'] == ""){
-                $precio = $value['amout_due'];
-            }elseif($value['es_congreso'] == 1 && $value['clave_socio'] != ""){
-                $precio = $value['amout_due'];
-            }
-            else if($value['es_servicio'] == 1 && $value['clave_socio'] == ""){
-                $precio = $value['precio_publico'];
-            }else if($value['es_servicio'] == 1 && $value['clave_socio'] != ""){
-                $precio = 0;
-            }
-            else if($value['es_curso'] == 1  && $value['clave_socio'] == ""){
-                $precio = $value['precio_publico'];
-            }else if($value['es_curso'] == 1  && $value['clave_socio'] != ""){
-                $precio = 0;
-            }
-            
-            $count_producto = HomeDao::getCountProductos($_SESSION['user_id'],$value['id_producto'])[0];
-
-            
-
-            if($value['estatus_compra'] == 1){
-                $disabled = 'disabled';
-                $checked = 'checked';
-                $pend_validar ='Pagado y validado por APM';
-                // $btn_imp = '';
-                $productos_pendientes_comprados[0]['clave'].'" target="blank_">Imprimir Formato de Pago</a>';
-                // $ocultar = 'display:none;';
-                
-            }else if($value['estatus_compra'] == null){
-                $pend_validar = 'Pendiente de validar';
-                $btn_imp = '<a class="btn btn-primary" href="/Home/print/'.$productos_pendientes_comprados[0]['clave'].'" target="blank_">Imprimir Formato de Pago</a>';
-                $ocultar = '';
-                // $disabled = 'disabled';
-                $checked = 'checked';
-                $total_productos += $count_producto['numero_productos'];
-                $total_pago += $count_producto['numero_productos'] * $precio;
-                array_push($array_precios,['id_product'=>$value['id_producto'],'precio'=>$precio,'cantidad'=>$count_producto['numero_productos']]);
-            }
-
-            if($value['max_compra'] <= 1){
-                $numero_productos = '<input type="number" id="numero_articulos'.$value['id_producto'].'" name="numero_articulos" value="'.$value['max_compra'].'" style="border:none;" readonly>';
-            }else{
-                $numero_productos = '<select class="form-control select_numero_articulos" id="numero_articulos'.$value['id_producto'].'" name="numero_articulos" data-id-producto="'.$value['id_producto'].'" data-precio="'.$precio.'" data-nombre-producto="'.$value['nombre_producto'].'" '.$disabled.'>';
-                for($i = 1; $i <= $value['max_compra']; $i++){                    
-                    $numero_productos .= '<option value="'.$i.'">'.$i.'</option>';                
-                }
-                $numero_productos .= '</select>';
-            }
-
-            $checks .= <<<html
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="form-check">
-                            <input class="form-check-input checks_product" type="checkbox" value="{$value['id_producto']}" id="check_curso_{$value['id_producto']}" name="checks_cursos[]" {$disabled} {$checked} data-precio="{$precio}" data-nombre-producto="{$value['nombre_producto']}">
-                            <label class="form-check-label" for="check_curso_{$value['id_producto']}">
-                                {$value['nombre_producto']} <span style="font-size: 13px; text-decoration: underline; color: green;">{$pend_validar} - No. productos {$count_producto['numero_productos']}</span>
-                            </label>
-                        </div>
-                    </div>
-                   
-                    <div class="col-md-2">
-                        {$precio} - {$value['tipo_moneda']}
+        foreach ($preguntas as $key => $value) {
+            $num_pregunta = 1;
+            $encuesta .= <<<html
+            <div class="col-12 encuesta_completa">
+                <div class="mb-3 text-dark">
+                    <h6 class="">$num_pregunta. {$value['pregunta']}</h6>
+                </div>
+                <input id="id_pregunta_$num_pregunta" value="{$value['id_pregunta_encuesta']}" hidden readonly>
+                <div class="form-group encuesta_curso_$num_pregunta">
+                    <div id="op1">
+                        <input type="radio" data-label="{$value['opcion1']}" id="opcion1_$num_pregunta" name="pregunta_$num_pregunta" value="1" required>
+                        <label class="form-label opcion-encuesta" for="opcion1_$num_pregunta">{$value['opcion1']}</label>
                     </div>
 
-                    <div class="col-md-2">
-                        {$numero_productos}
+                    <div id="op2">
+                        <input type="radio" data-label="{$value['opcion2']}" id="opcion2_$num_pregunta" name="pregunta_$num_pregunta" value="2">
+                        <label class="form-label opcion-encuesta" for="opcion2_$num_pregunta">{$value['opcion2']}</label>
                     </div>
-                </div>
 
-                <hr>
-                  
-html;            
-                $numero_productos = '';
-
-        }
-
-        $productos_no_comprados = HomeDao::getProductosNoComprados($data_user['user_id']);
-
-        foreach($productos_no_comprados as $key => $value) {
-
-            
-            // if($data_user['amout_due'] != null || $data_user['amout_due'] != ''){
-
-                // if($value['es_congreso'] == 1){
-                //     $precio = $data_user['amout_due'];
-                // }else if($value['es_servicio'] == 1){
-                //     $precio = $value['precio_publico'];
-                // }else if($value['es_curso'] == 1){
-                //     $precio = $value['precio_publico'];
-                // }
-            // }else{
-            //     $precio = $value['precio_publico'];
-            // }
-
-            if($value['es_congreso'] == 1 && $value['clave_socio'] == ""){
-                $precio = $value['amout_due'];
-            }elseif($value['es_congreso'] == 1 && $value['clave_socio'] != ""){
-                $precio = $value['amout_due'];
-            }
-            else if($value['es_servicio'] == 1 && $value['clave_socio'] == ""){
-                $precio = $value['precio_publico'];
-            }else if($value['es_servicio'] == 1 && $value['clave_socio'] != ""){
-                $precio = 0;
-            }
-            else if($value['es_curso'] == 1  && $value['clave_socio'] == ""){
-                $precio = $value['precio_publico'];
-            }else if($value['es_curso'] == 1  && $value['clave_socio'] != ""){
-                $precio = 0;
-            }
-
-            if($value['max_compra'] <= 1){
-                $numero_productos = '<input type="number" id="numero_articulos'.$value['id_producto'].'" name="numero_articulos" value="'.$value['max_compra'].'" style="border:none;" readonly>';
-            }else{
-                $numero_productos = '<select class="form-control select_numero_articulos" id="numero_articulos'.$value['id_producto'].'" name="numero_articulos" data-id-producto="'.$value['id_producto'].'"  data-precio="'.$precio.'" data-nombre-producto="'.$value['nombre_producto'].'">';
-                for($i = 1; $i <= $value['max_compra']; $i++){                    
-                    $numero_productos .= '<option value="'.$i.'">'.$i.'</option>';                
-                }
-                $numero_productos .= '</select>';
-            }
-            
-            $checks .= <<<html
-
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="form-check">
-                        <input class="form-check-input checks_product" type="checkbox" value="{$value['id_producto']}" id="check_curso_{$value['id_producto']}" name="checks_cursos[]" data-precio="{$precio}" data-nombre-producto="{$value['nombre_producto']}" {$check_disabled}>
-                        <label class="form-check-label" for="check_curso_{$value['id_producto']}">
-                            {$value['nombre_producto']}
-                        </label>
+                    <div id="op3">
+                        <input type="radio" data-label="{$value['opcion3']}" id="opcion3_$num_pregunta" name="pregunta_$num_pregunta" value="3">
+                        <label class="form-label opcion-encuesta" for="opcion3_$num_pregunta">{$value['opcion3']}</label>
                     </div>
-                </div>
-               
-                <div class="col-md-2">
-                    {$precio} - {$value['tipo_moneda']}
-                </div>
 
-                <div class="col-md-2">
-                       {$numero_productos}
+                    <div id="op4">
+                        <input type="radio" data-label="{$value['opcion4']}" id="opcion4_$num_pregunta" name="pregunta_$num_pregunta" value="4">
+                        <label class="form-label opcion-encuesta" for="opcion4_$num_pregunta">{$value['opcion4']}</label>
+                    </div>
+                    
                 </div>
-
             </div>
 
-            <hr>
-            
-               
-html;            
-            $numero_productos = '';
+            <script>
+                $('.encuesta_curso_$num_pregunta').on('click',function(){
+                    let respuesta = $('.encuesta_curso_$num_pregunta input[name=pregunta_$num_pregunta]:checked');
+                    if($('.encuesta_curso_$num_pregunta #op'+respuesta.val()+' input').prop('checked')){
+                        $('.encuesta_curso_$num_pregunta label').removeClass('opacity-5');
+                        $('.encuesta_curso_$num_pregunta #op'+respuesta.val()+' label').addClass('opacity-5');
+                    }
 
+                    // Pinta la respuesta si es correcta o no
+                    // if(respuesta.val() == {$value['respuesta_correcta']}){
+                    //     $('.encuesta_curso_$num_pregunta label').addClass('text-dark');
+                    //     $('.encuesta_curso_$num_pregunta #op'+respuesta.val()+' label').removeClass('text-dark').addClass('text-success');
+                    // } else {
+                    //     $('.encuesta_curso_$num_pregunta label').addClass('text-dark');
+                    //     $('.encuesta_curso_$num_pregunta #op'+respuesta.val()+' label').removeClass('text-dark').addClass('text-danger');
+                    // }
+                });
+                    
+                
+            </script>
+html;
+            $num_pregunta = $num_pregunta + 1;
         }
+       
 
-        $tipo_cambio = HomeDao::getTipoCambio();
-
-        $total_mx = intval($total_pago) * floatval($tipo_cambio['tipo_cambio']);
-
-        // var_dump($array_precios);
-        // exit;
-
-        // var_dump($tipo_cambio['tipo_cambio']);
-        // exit;
-        //las dos lineas de arriba son para sacar el tipo de cambio por posicion
-
-        // if($src_qr != ''){
-        //     // $btn_imp = '<a class="btn btn-primary" onclick="javascript:window.print();">Imprimir</a>';
-        //     $btn_imp = '<a class="btn btn-primary" href="/Home/print/'.$productos_pendientes_comprados[0]['clave'].'" target="blank_">Imprimir</a>';
-        //     $ocultar = '';
-        // }else{
-        //     $btn_imp = '';
-        //     $ocultar = 'display:none;';
-        // }
+        
   
         View::set('header',$this->_contenedor->header($extraHeader));   
         View::set('datos',$data_user);
-        View::set('clave',$clave);    
-        View::set('checks',$checks);
-        View::set('src_qr',$src_qr); 
-        View::set('btn_block',$btn_block); 
-        View::set('total_productos',$total_productos); 
-        View::set('total_pago',$total_pago); 
-        View::set('total_pago_mx',$total_mx); 
-        View::set('btn_imp',$btn_imp); 
-        View::set('ocultar',$ocultar);
-        View::set('tipo_cambio',$tipo_cambio['tipo_cambio']);
-        View::set('array_precios',$array_precios);
+        View::set('encuesta',$encuesta);
         View::render("principal_all");
     }
 

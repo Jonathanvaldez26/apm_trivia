@@ -145,6 +145,19 @@ sql;
       return $mysqli->queryAll($query);
     }
 
+    public static function getPreguntasByVideoCongreso($curso){
+      $mysqli = Database::getInstance();
+      $query=<<<sql
+      SELECT pe.*
+      FROM preguntas_encuesta_videos_congreso pe
+      INNER JOIN videos_congreso vc
+      ON vc.id_video_congreso = pe.id_video_congreso
+      WHERE pe.id_video_congreso = $curso
+sql;
+      return $mysqli->queryAll($query);
+    }
+
+
 //     public static function getTallerById($id){
 //       $mysqli = Database::getInstance(true);
 //       $query =<<<sql
@@ -291,6 +304,17 @@ public static function insertRespuestaProductCurso($id_registrado,$id_pregunta_e
   $mysqli = Database::getInstance(1);
   $query=<<<sql
     INSERT INTO respuestas_encuesta_productcurso(id_pregunta_encuesta, user_id, respuesta_registrado) 
+    VALUES ('$id_pregunta_encuesta','$id_registrado','$respuesta_registrado')
+sql;
+
+  $id = $mysqli->insert($query);
+  return $id;
+}
+
+public static function insertRespuestaVideoCongreso($id_registrado,$id_pregunta_encuesta,$respuesta_registrado){
+  $mysqli = Database::getInstance(1);
+  $query=<<<sql
+    INSERT INTO respuestas_encuesta_videos_congreso(id_pregunta_encuesta, user_id, respuesta_registrado) 
     VALUES ('$id_pregunta_encuesta','$id_registrado','$respuesta_registrado')
 sql;
 
