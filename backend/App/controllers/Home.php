@@ -31,7 +31,7 @@ class Home extends Controller{
             Home
       </title>
 html;
-$extraFooter = <<<html
+    $extraFooter = <<<html
             <!--footer class="footer pt-0">
                     <div class="container-fluid">
                         <div class="row align-items-center justify-content-lg-between">
@@ -124,7 +124,6 @@ $extraFooter = <<<html
 
             });
         </script>
-
 html;
 
         $data_user = HomeDao::getDataUser($this->__usuario);
