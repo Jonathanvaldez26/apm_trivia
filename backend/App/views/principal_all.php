@@ -245,7 +245,7 @@
          <?php echo $footer; ?> 
     </main>
 <!-- </div> -->
-    <?php echo //$modalComprar?>
+    
 
     <div class="modal fade" id="encuesta" role="dialog" aria-labelledby="encuestaLabel" aria-hidden="true">
         <div class="modal-dialog modal-size" role="document">
